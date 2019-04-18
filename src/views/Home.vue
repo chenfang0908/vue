@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    22142141
+    221421411231231
     <img alt="Vue logo" src="../assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
