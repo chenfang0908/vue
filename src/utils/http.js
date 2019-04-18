@@ -10,7 +10,7 @@ axios.interceptors.request.use(
         if(config.method  === 'post'){
             config.data = Qs.stringify(config.data);
         }
-        config.headers.Authorization = 'F2B8A245345A4B7B934DBCD82B715B79';
+        config.headers.Authorization = '31A8FA61DD8C4FE1B2390E25EFD5F3B3';
         return config;
     },
     err => {
@@ -25,7 +25,6 @@ axios.interceptors.response.use(
                 name: 'home'
             })
         }
-        response["Access-Control-Allow-Origin"] = "http://10.12.22.101:8080";
         return response;
     },
     error => {

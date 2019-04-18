@@ -11,16 +11,16 @@
 export default {
   name: 'app',
   created(){
-    // let data = {
-    //   bookmardIds: 'all',
-    //   unClassified: true,
-    //   onlineFirst: true,
-    //   liveFirst: false,
-    //   living: true,
-    //   online: true,
-    //   offline: true,
-    // }
-    // this.$http.get("/ccp/tvucc-user/userDevice/listR", { params: data })
+    let data = {
+      bookmardIds: 'all',
+      unClassified: true,
+      onlineFirst: true,
+      liveFirst: false,
+      living: true,
+      online: true,
+      offline: true,
+    }
+    this.$http.get("/ccp/tvucc-user/userDevice/listR", { params: data })
   },
   components: {
   }
