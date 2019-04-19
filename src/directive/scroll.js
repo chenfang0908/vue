@@ -17,7 +17,7 @@ scroll.install = function(Vue){
             // console.info(scrollHeight,e.target.offsetTop);
             //  滚动到指定区域执行回调事件
             if ((typeof binding.value === 'function') && residualHeight <= distance && eventAction) {
-            // 执行事件回调函数   如果不明白此处的binding.value的同学请点击上面的链接,自行去官方查看
+            // 执行事件回调函数
                 binding.value();
                 eventAction = false
             }  else if (residualHeight > distance) {
