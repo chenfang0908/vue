@@ -10,7 +10,7 @@ axios.interceptors.request.use(
         if(config.method  === 'post'){
             config.data = Qs.stringify(config.data);
         }
-        config.headers.Authorization = 'C91C85CF98C0425681D059375F1CB6CB';
+        config.headers.Authorization = '2A38DCE1F21940FC801378DD83B246F6';
         return config;
     },
     err => {

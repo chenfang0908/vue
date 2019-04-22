@@ -1,27 +1,42 @@
 <template>
     <div>
         <div>滚动加载</div>
-        <div class="scrollbar" ref="scrollbar" v-scroll="onScroll">
+        <v-select :data="selectData" :selectVal="val" :callback="select"></v-select>
+        <div class="scrollbar" v-scroll="scrollData">
             <ul class="scrollList">
-                <li v-for="(val,key) in data" :key="key">hahaha {{val}}</li>
+                <li v-for="(val,key) in data" :key="key">第{{val}}条</li>
             </ul>
         </div>
     </div>
 </template>
 <script>
+import VSelect from '@/components/select';
+import { SelectData } from '@/config';
+import { setInterval } from 'timers';
 export default {
     props:{},
     data(){
         return{
+            scrollData:{
+                onScroll:this.onScroll,
+                resetScrollTop: false
+            },
+            value1: 0,
             data:0,
             page:1,
             size:20,
             noMore: false,
-            loading:false
+            loading:false,
+            val:'选项3',
+            selectData : SelectData,
+      
         }
     },
+    components: {
+        VSelect,
+    },
     mounted(){
-        this.queryInfo();   
+        this.queryInfo();  
     },
     methods:{
         onScroll(){
@@ -33,7 +48,7 @@ export default {
             }
             this.page += 1;
 
-            //注意此处需要判断loading和nomor得值
+            //注意此处需要判断loading和noMore得值
             // 当接口正在请求还未返回值是默认把 loading置为true， 当返回的list条数小于size时 则表示没有下一页   否则去请求接口
             // if(this.loading || this.noMore){
             //     return
@@ -44,8 +59,19 @@ export default {
         },
         queryInfo(){
             // 请求数据
-            this.data += 100;
-        }
+            this.data += this.size;
+        },
+        select(val){
+            console.info('可进行筛选后的查询',val);
+            this.data = 0;
+            this.page = 1;
+            this.noMore = false;
+            this.scrollData.resetScrollTop = true;
+            //目的是 做一些筛选的时候 让滚动条回到初始状态
+            this.$el.querySelector('.scrollbar').scrollTop = 0;
+            this.queryInfo();   
+
+        },
     }
 }
 </script>

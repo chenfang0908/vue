@@ -1,6 +1,7 @@
 <template>
     <div class="home">
         <div class="flex">
+            <div>下拉框组件</div>
             <v-select :data="selectData" :selectVal="val" :callback="queryInfo"></v-select>
         </div>
         <div class="flex">

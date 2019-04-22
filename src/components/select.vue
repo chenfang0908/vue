@@ -1,6 +1,6 @@
 <template>
 <div>
-    <div>下拉框组件</div>
+    
     <el-select v-model="val" placeholder="请选择" @change="change">
         <el-option
         v-for="item in data"
