@@ -1,26 +1,30 @@
 <template>
-    <div class="tree-menu">
-        <div class="tree-btn" @click="show('show',showTree)">
-            书签
-            <span v-if="checkLength">({{checkLength}})</span>
-            <i class="el-icon-caret-bottom"></i>
+<div class="m-b-20">
+        <span>书签：</span>
+        <div class="tree-menu">
+            <div class="tree-btn" @click="show('show',showTree)">
+                书签
+                <span v-if="checkLength">({{checkLength}})</span>
+                <i class="el-icon-caret-bottom"></i>
+            </div>
+            <div class="tree" ref="box" v-show="showTree">
+                <el-scrollbar style="height:100%">
+                    <el-tree
+                        :data="tree"
+                        :props="defaultProps"
+                        node-key="id"
+                        accordion
+                        :default-checked-keys="defaultCheckedkeys"
+                        show-checkbox
+                        ref="tree"
+                        :check-strictly="true"
+                        @check="handleNodeClick"
+                    ></el-tree>
+                </el-scrollbar>
+            </div>
         </div>
-        <div class="tree" ref="box" v-show="showTree">
-            <el-scrollbar style="height:100%">
-                <el-tree
-                    :data="tree"
-                    :props="defaultProps"
-                    node-key="id"
-                    accordion
-                    :default-checked-keys="defaultCheckedkeys"
-                    show-checkbox
-                    ref="tree"
-                    :check-strictly="true"
-                    @check="handleNodeClick"
-                ></el-tree>
-            </el-scrollbar>
-        </div>
-    </div>
+</div>
+    
 </template>
 <script>
 export default {
@@ -267,8 +271,23 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.m-b-20{
+    margin-bottom: 20px;
+    text-align: left;
+    >span{
+        display: inline-block;
+        width: 100px;
+        text-align: right;
+    }
+    .tree-menu {
+        display: inline-block;
+        width: 110px;
+    }
+}
 .tree-menu {
     position: relative;
+    font-size: 14px;
+    text-align: center;
 }
 .tree-btn {
     background: #444;

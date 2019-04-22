@@ -7,7 +7,8 @@ import ElementUI from 'element-ui';
 import http from './utils/http';
 import Scroll from '@/directive/scroll';
 
-import '../theme/index.css'
+import '../theme/index.css';
+import '@/assets/css/element.less'
 
 Vue.use(ElementUI);
 Vue.use(http);

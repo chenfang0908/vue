@@ -1,8 +1,7 @@
 <template>
     <div class="home">
         <div class="flex">
-            <div>下拉框组件</div>
-            <v-select :data="selectData" :selectVal="val" :callback="queryInfo"></v-select>
+            <part-one></part-one>
         </div>
         <div class="flex">
             <part-two></part-two>
@@ -17,26 +16,19 @@
 </template>
 
 <script>
-import VSelect from '@/components/select';
+import PartOne from '@/components/part1';
 import PartTwo from '@/components/part2';
-import { SelectData } from '@/config';
 export default {
     name: "home",
     data(){
         return{
-            val:'选项2',
-            selectData : SelectData,
         }
     },
     components: {
-        VSelect,
-        PartTwo
+        PartTwo,
+        PartOne
     },
-    methods:{
-        queryInfo(val){
-            console.info('可进行筛选后的查询',val);
-        },
-    }
+    
 };
 </script>
 <style lang="less" scoped>

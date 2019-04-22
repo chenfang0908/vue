@@ -1,0 +1,230 @@
+
+// 重置下拉菜单样式
+.el-dropdown{
+    .el-button{
+        &.el-button--primary{
+            width: 100%;
+            background-color: #444;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            padding: 6px 20px;
+        }
+    }
+}
+.el-dropdown-menu{
+    background: #444;
+    border: 1px solid #444;
+    &.el-popper[x-placement^="bottom"]{
+        margin-top: 3px;
+    }
+    .popper__arrow{
+        display: none;
+    }
+    .el-dropdown-menu__item{
+        color: #fff;
+        &:not(.is-disabled):hover {
+            background: rgba(57, 170, 80, 0.25);
+            color: #fff;
+        }
+        .el-checkbox{
+            margin-right: 5px;
+            .el-checkbox__inner{
+                background: none;
+            }
+            .el-checkbox__input.is-checked .el-checkbox__inner {
+                background-color: #fff;
+                border-color: #fff;
+            }
+            .el-checkbox__inner::after{
+                border-color: #33ab4f;
+            }
+        }
+        &.red{
+            .el-checkbox__inner {
+                border-color: red;
+            }
+            .el-checkbox__input.is-checked .el-checkbox__inner {
+                background-color: red;
+                border-color: red;
+            }
+            .el-checkbox__inner::after{
+                border-color: #fff;
+            } 
+        }
+        &.green{
+            .el-checkbox__inner {
+                border-color: #33ab4f;
+            }
+            .el-checkbox__input.is-checked .el-checkbox__inner {
+                background-color: #33ab4f;
+                border-color: #33ab4f;
+            }
+            .el-checkbox__inner::after{
+                border-color: #fff;
+            } 
+        }
+        &.gray{
+            .el-checkbox__inner {
+                border-color: #999;
+            }
+            .el-checkbox__input.is-checked .el-checkbox__inner {
+                background-color: #999;
+                border-color: #999;
+            }
+            .el-checkbox__inner::after{
+                border-color: #fff;
+            } 
+        }
+    }
+    
+}
+
+// 重置下拉款样式
+.select-box{
+    position: relative;
+    display: inline-block;
+    i.el-icon-caret-bottom{
+        position: absolute;
+        right: 5px;
+        z-index: 1;
+        top: 50%;
+        transform: translateY(-50%);
+        pointer-events:none;
+        color: #fff;
+    }
+}
+.el-select{
+    &:hover {
+        .el-input__inner {
+            border-color:#444;
+        }
+    }
+    .el-input__inner {
+        height: 26px;
+        line-height: 26px;
+        border: 1px solid #444;
+        background:#444;
+        color:#fff;
+    }
+    .el-input__inner:focus {
+        border-color:#444;
+    }
+    .el-input.is-focus {
+        .el-input__inner {
+            border-color:#444;
+        }
+    }
+    .el-input {
+        .el-select__caret {
+            color:#fff;
+        }
+    }
+    .el-input__suffix{
+        display:none;
+    }
+}
+.el-select-dropdown {
+    background:#444;
+    border:none;
+    .el-select-dropdown__item:hover,.el-select-dropdown__item.hover {
+        background:rgba(57,170,80,0.25);
+    }
+    .el-select-dropdown__item{
+        color: #fff;
+        &.selected {
+            font-weight:normal;
+        }
+    }
+    .el-select-dropdown__item.is-disabled{
+        color: #787878;
+    }
+    .el-select-dropdown__item.selected:after {
+        position: absolute;
+        right: 10px;
+        font-family: element-icons;
+        content: "\E611";
+        font-size: 14px;
+        font-weight: 700;
+        -webkit-font-smoothing: antialiased;
+        color:#38aa53;
+    }
+    .el-select-dropdown__item.selected.multiple:after {
+        display:none;
+    }
+    .popper__arrow{
+        display: none;
+    }
+    &.el-popper[x-placement^=bottom] {
+        margin-top: 3px;
+    }
+    &.white{
+        background: #fff;
+        .el-select-dropdown__item.selected {
+            color:#444;
+            font-weight:normal;
+        }
+        .el-select-dropdown__item{
+            color: #444;
+        }
+    }
+    &.is-multiple {
+        .el-select-dropdown__item.selected {
+            color:#fff;
+            background:none;
+        }
+        .el-select-dropdown__item.selected.hover {
+            background-color:rgba(57,170,80,0.25);
+        }
+    }
+}
+
+// 重置输入框样式
+.search-box{
+    position: relative;
+    display: inline-block;
+    i.el-icon-search{
+        position: absolute;
+        right: 5px;
+        z-index: 1;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #fff;
+        cursor: pointer;
+    }
+}
+.el-input{
+    &.white{
+        .el-input__inner{
+            color: #666;
+            display: inline-block;
+            height: 32px;
+            line-height: 32px;
+            outline: 0;
+            padding: 0 15px;
+            background: #fff;
+            border: none;
+        }
+    }
+    .el-input__inner{
+        background: #252525;
+        border: 1px solid #5cb85c;
+        color: #fff;
+        &:hover,&:focus{
+            border: 1px solid #5cb85c;
+        }
+    }
+    .el-input__inner::-webkit-input-placeholder {
+        color:#999;
+    }
+    .el-input__prefix, .el-input__suffix {
+        color:#fff;
+        line-height: 32px;
+    }
+    .el-input.el-input--small .el-icon-search{
+        font-size: 14px;
+        cursor: pointer;
+        line-height: 30px;
+        margin-right: 9px;
+    }
+}

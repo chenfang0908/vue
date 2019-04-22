@@ -1,16 +1,16 @@
 <template>
     <div>
-        <div>滚动加载</div>
+        
         <v-select :data="selectData" :selectVal="val" :callback="select"></v-select>
         <div class="scrollbar" v-scroll="scrollData">
             <ul class="scrollList">
-                <li v-for="(val,key) in data" :key="key">第{{val}}条</li>
+                <li v-for="(val,key) in data" :key="key">scroll第{{val}}条</li>
             </ul>
         </div>
     </div>
 </template>
 <script>
-import VSelect from '@/components/select';
+import VSelect from '@/components/part1/select';
 import { SelectData } from '@/config';
 import { setInterval } from 'timers';
 export default {
