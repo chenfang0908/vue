@@ -3,7 +3,7 @@
     <span>下拉框组件：</span>
     <div class="select-box">
         <i class="el-icon-caret-bottom"></i>
-        <el-select v-model="val" placeholder="" @change="change">
+        <el-select v-model="val" placeholder="" :filterable="filterable" @change="change">
             <el-option
             v-for="item in data"
             :key="item.value"
@@ -21,10 +21,14 @@
     props:{
         callback: {   //筛选后的回调
             type: Function,
-            default:function(){}
+            default:function(){},
         },
         data: Array, //必须包含label value [{label:'111',value:2}], 用来渲染下拉列表
         selectVal : [String, Number],  //默认选中值
+        filterable: { //是否可搜索
+            type: Boolean,
+            default: false
+        }
     },
     data() {
       return {

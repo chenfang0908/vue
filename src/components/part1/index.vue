@@ -1,6 +1,6 @@
 <template>
     <div>
-        <v-select :data="selectData" :selectVal="val" :callback="queryInfo"></v-select>
+        <v-select :data="selectData" :selectVal="val" :callback="queryInfo" :filterable="true"></v-select>
         <v-dropdowm :data="dropdowmData" :title="title" :callback="queryInfo"></v-dropdowm>
         <v-input :placeholder="placeholder" :callback="queryInfo"></v-input>
         <book-mark :otherData="otherData" :callback="filterListInfo"></book-mark>
