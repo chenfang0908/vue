@@ -20,7 +20,7 @@ export default {
     methods:{
         filterListInfo(data){
             // 查询列表
-            console.info(data);
+            // console.info(data);
         }
     }
 }

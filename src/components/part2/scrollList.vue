@@ -54,7 +54,7 @@ export default {
             //     return
             // }
 
-            console.info('触发');
+            // console.info('触发');
             this.queryInfo();            
         },
         queryInfo(){
@@ -62,7 +62,7 @@ export default {
             this.data += this.size;
         },
         select(val){
-            console.info('可进行筛选后的查询',val);
+            // console.info('可进行筛选后的查询',val);
             this.data = 0;
             this.page = 1;
             this.noMore = false;

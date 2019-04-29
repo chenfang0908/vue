@@ -224,7 +224,6 @@ export default {
             }
             bookmark.bookmardIds = allIds.join(",");
             // 发送请求 筛选设备
-            console.info(232,bookmark);
             this.callback(bookmark);
         },
         formatAllBookmarkId(data) {

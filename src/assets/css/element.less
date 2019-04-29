@@ -23,12 +23,22 @@
     }
     .el-dropdown-menu__item{
         color: #fff;
+        position: relative;
         &:not(.is-disabled):hover {
             background: rgba(57, 170, 80, 0.25);
             color: #fff;
         }
+        .name{
+            padding-left: 20px;
+            position: relative;
+            z-index: 2;
+        }
         .el-checkbox{
             margin-right: 5px;
+            position: absolute;
+            top: 0;
+            left: 20px;
+            z-index: 1;
             .el-checkbox__inner{
                 background: none;
             }

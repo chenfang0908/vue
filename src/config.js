@@ -21,7 +21,7 @@ export const SelectData = [
 export const DropdowmData = [
     {
         value: 'living',
-        label: '直播',
+        label: '直播直播直播直播直播',
         isChecked:true,
         color:'red'
       }, {
@@ -45,7 +45,38 @@ export const DropdowmData = [
       }
 ]
 
+export const DropdowmData2 = [
+    {
+      value: 'all',
+      label: 'all',
+      isChecked:true,
+    },
+    {
+      value: 'pack',
+      label: '背包',
+      isChecked:true,
+    }, {
+      value: 'anywhere',
+      label: '直播手机',
+      isChecked:true,
+    }
+    // }, {
+    //   value: 'gridPack',
+    //   label: '转播源',
+    //   isChecked:true,
+    // }, {
+    //   value: 'gridSdi',
+    //   label: 'SDI 转播源',
+    //   isChecked:true
+    // }, {
+    //   value: 'ext',
+    //   label: 'Ext',
+    //   isChecked:false
+    // }
+]
+
 export default{
     SelectData,
-    DropdowmData
+    DropdowmData,
+    DropdowmData2
 }
