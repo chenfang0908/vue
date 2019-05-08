@@ -6,13 +6,6 @@
                 <li v-for="(val,key) in data" :key="key">scroll第{{val}}条</li>
             </ul>
         </div>
-        <!-- <div class="scrollbar">
-            <div v-infinite-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="10">
-            <ul class="scrollList">
-                <li v-for="(val,key) in data" :key="key">scroll第{{val}}条</li>
-            </ul>
-            </div>
-        </div> -->
         <div>{{array[0].name}}</div>
         <children :data="array"></children>
 
