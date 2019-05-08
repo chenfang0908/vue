@@ -22,6 +22,7 @@
 import VSelect from '@/components/part1/select';
 import Children from './children';
 import { SelectData } from '@/config';
+
 export default {
     props:{},
     data(){
