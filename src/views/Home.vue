@@ -1,16 +1,10 @@
 <template>
     <div class="home">
-        <div class="flex">
+        <div class="flex flex1">
             <part-one></part-one>
         </div>
-        <div class="flex">
+        <div class="flex flex2">
             <part-two></part-two>
-        </div>
-        <div class="flex">
-            
-        </div>
-        <div class="flex">
-            
         </div>
     </div>
 </template>
@@ -39,6 +33,12 @@ export default {
         padding: 0 30px;
         min-height: 100vh;
         border-right: 1px solid #e6e6e6;
+    }
+    .flex1{
+        flex: 1;
+    }
+    .flex2{
+        flex: 3;
     }
 }
 </style>

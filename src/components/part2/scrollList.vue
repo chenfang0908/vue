@@ -1,18 +1,27 @@
 <template>
     <div>
-        
         <v-select :data="selectData" :selectVal="val" :callback="select"></v-select>
         <div class="scrollbar" v-scroll="scrollData">
             <ul class="scrollList">
                 <li v-for="(val,key) in data" :key="key">scroll第{{val}}条</li>
             </ul>
         </div>
+        <!-- <div class="scrollbar">
+            <div v-infinite-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="10">
+            <ul class="scrollList">
+                <li v-for="(val,key) in data" :key="key">scroll第{{val}}条</li>
+            </ul>
+            </div>
+        </div> -->
+        <div>{{array[0].name}}</div>
+        <children :data="array"></children>
+
     </div>
 </template>
 <script>
 import VSelect from '@/components/part1/select';
+import Children from './children';
 import { SelectData } from '@/config';
-import { setInterval } from 'timers';
 export default {
     props:{},
     data(){
@@ -29,16 +38,23 @@ export default {
             loading:false,
             val:'选项3',
             selectData : SelectData,
+            busy:true,
+            array:[
+                {name:1}
+            ]
       
         }
     },
     components: {
         VSelect,
+        Children
     },
     mounted(){
         this.queryInfo();  
     },
     methods:{
+        loadMore(){
+        },
         onScroll(){
 
             // 仅作为调试使用

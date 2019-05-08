@@ -45,7 +45,6 @@ export default {
         }
     },
     created(){
-        console.info(48,this.dropdowmData,this.dropdowmData2);
     },
     methods:{
         queryInfo(val){
